@@ -9,15 +9,16 @@ const characterSlice = createSlice({
     initialState,
     reducers: {
         setCharacters: (state, action) => {
-            action.payload.characters.forEach((char) => {
-                state.characters.push(char.data())
-            })
+            state.characters.push(action.payload.characters)
+        },
+        unsetCharacters: (state) => {
+            state.characters = []
         }
     }
 });
 
-export const { setCharacters } = characterSlice.actions
+export const { setCharacters, unsetCharacters } = characterSlice.actions
 
-export const selectCharacters = state => state.characters
+export const selectCharacters = state => state.characters.characters
 
 export default characterSlice.reducer

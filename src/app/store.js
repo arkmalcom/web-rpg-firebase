@@ -5,7 +5,7 @@ import userReducer from '../features/auth/userSlice';
 
 export default configureStore({
     reducer: {
-        character: characterReducer,
+        characters: characterReducer,
         user: userReducer,
     },
 })
